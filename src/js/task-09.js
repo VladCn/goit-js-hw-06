@@ -12,4 +12,4 @@ const action = () => {
   bodyJS.style.backgroundColor = `${textColorJs.textContent}`
 }
 
-const btnAction = changeColorBtn.addEventListener("click", action)
+changeColorBtn.addEventListener("click", action)
