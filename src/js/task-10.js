@@ -18,7 +18,7 @@ function createBoxes(amount){
   let height = 30
   let width = 30
 
-  for(let i = 0; i <= amount; i += 1){
+  for(let i = 0; i < amount; i += 1){
     const divCreate = document.createElement('div')
     divCreate.style.height = `${height}px`
     divCreate.style.width = `${width}px`
@@ -37,8 +37,5 @@ const divArrayJs = document.querySelectorAll(".newDiv")
   }
 }
 
-
 createBtnJs.addEventListener('click', getInputValue)
 destroyBtnJs.addEventListener('click', reset)
-
-
