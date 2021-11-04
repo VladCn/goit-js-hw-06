@@ -7,9 +7,9 @@ const textColorJs = document.querySelector(".color")
 const bodyJS = document.querySelector("body")
 
 const action = () => {
-  getRandomHexColor()
-  textColorJs.textContent = getRandomHexColor()
-  bodyJS.style.backgroundColor = `${textColorJs.textContent}`
+ const color = getRandomHexColor()
+  textColorJs.textContent = color
+  bodyJS.style.backgroundColor = `${color}`
 }
 
 changeColorBtn.addEventListener("click", action)

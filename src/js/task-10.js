@@ -14,20 +14,34 @@ function getInputValue () {
   createBoxes(valueInput)
 }
 function createBoxes(amount){
+  const classBoxName = "newDiv"
+  const allClassBoxes = document.querySelectorAll(`.${classBoxName}`)
 
-  let height = 30
-  let width = 30
+  let height
+  let width
+
+  if(!allClassBoxes.length){
+    height = 30
+    width = 30
+  } else {
+    const lastBox = allClassBoxes[allClassBoxes.length-1]
+
+    height = parseInt(lastBox.style.height) +10
+    width = parseInt(lastBox.style.width) +10
+  }
+
 
   for(let i = 0; i < amount; i += 1){
     const divCreate = document.createElement('div')
     divCreate.style.height = `${height}px`
     divCreate.style.width = `${width}px`
     divCreate.style.backgroundColor = getRandomHexColor()
-    divCreate.classList.add("newDiv")
+    divCreate.classList.add(classBoxName)
     divJs.insertAdjacentElement("beforeend", divCreate)
     height += 10
     width += 10
   }
+
 }
 
 function reset(){
